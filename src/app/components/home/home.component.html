@@ -1,0 +1,29 @@
+<form fxLayout="row" fxLayoutAlign="center center" autocomplete="off" #form="ngForm" (submit)="onSubmit()">
+    <mat-card fxFlex="400px" [ngStyle.gt-sm]="{ padding: '50px' }">
+        <h3>Login page</h3>
+
+        <div fxLayout="row">
+            <div fxFlex="auto">
+                <mat-form-field appearance="outline">
+                    <mat-label>Username :</mat-label>
+                    <input type="text" matInput ngModel name="username" required>
+                    <mat-error [input]="form.controls['username']"></mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div fxLayout="row">
+            <div fxFlex="auto">
+                <mat-form-field appearance="outline">
+                    <mat-label>Password :</mat-label>
+                    <input type="password" matInput ngModel name="password" required pattern="^[A-z0-9]{5,15}$">
+                    <mat-error [input]="form.controls['password']"></mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div fxLayout="row">
+            <button type="submit" mat-raised-button color="primary" fxFlex="auto">SUBMIT FORM</button>
+        </div>
+    </mat-card>
+</form>
