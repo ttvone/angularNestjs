@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "~@angular/material/theming";
+
+$primary: mat-palette($mat-indigo);
 
 * {
     box-sizing: border-box;
@@ -18,6 +20,16 @@ body,
     font-family: 'Chakra Petch', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: mat-color($primary);
+
+    &:hover {
+        text-decoration: underline;
+        color: mat-color($primary, 900);
+    }
+}
+
 body {
     background-color: lighten($color: #000000, $amount: 90);
     padding: 0;
@@ -25,4 +37,16 @@ body {
 
 mat-form-field {
     width: 100%;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
 }

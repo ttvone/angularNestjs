@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatInputModule, MatButtonModule, MatCardModule, MatDividerModule } from '@angular/material';
-import { HomeComponent } from './components/home/home.component';
+import { MatInputModule, MatButtonModule, MatCardModule, MatDividerModule, MatIconModule } from '@angular/material';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', redirectTo: 'account/login', pathMatch: 'full' },
+  { path: 'account/login', component: LoginComponent },
+  { path: 'account/register', component: RegisterComponent },
 ];
 
 @NgModule({
@@ -15,7 +18,8 @@ const routes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule
   ],
   exports: [
     RouterModule,
@@ -23,7 +27,8 @@ const routes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule
   ]
 })
 export class AppRoutingModule { }

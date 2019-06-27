@@ -1,5 +1,5 @@
 <form fxLayout="row" fxLayoutAlign="center center" autocomplete="off" #form="ngForm" (submit)="onSubmit()">
-    <mat-card fxFlex="400px" [ngStyle.gt-sm]="{ padding: '50px' }">
+    <mat-card fxFlex="500px" [ngStyle.gt-sm]="{ padding: '50px' }">
         <h3>Login page</h3>
 
         <div fxLayout="row">
@@ -24,6 +24,14 @@
 
         <div fxLayout="row">
             <button type="submit" mat-raised-button color="primary" fxFlex="auto">SUBMIT FORM</button>
+        </div>
+
+        <br>
+        <div fxLayout="row">
+            <span fxFlex="65">Do you do not have account? </span>
+            <a fxFlex="35" class="text-right" routerLink="/account/register">
+                <mat-icon>launch</mat-icon> Register
+            </a>
         </div>
     </mat-card>
 </form>
